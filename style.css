@@ -1,0 +1,41 @@
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.box {
+    background: white;
+    padding: 20px;
+    margin: 20px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px gray;
+    transition: transform 0.3s;
+}
+
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: darkblue;
+}
