@@ -5,11 +5,12 @@ const User = require("../models/User");
 // CREATE USER
 router.post("/", async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, email, age, password } = req.body;
 
     const user = new User({
       name,
       email,
+      age,
       password
     });
 
