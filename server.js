@@ -1,10 +1,10 @@
 require("dotenv").config();
 
-
 const express = require("express");
+const path = require("path");
 const connectDB = require("./config/db");
 const userRoutes = require("./routes/userRoutes");
-const authRoutes = require("./routes/authRoutes")
+const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
@@ -13,12 +13,17 @@ connectDB();
 
 // Middleware
 app.use(express.json());
-app.use("/api/users", userRoutes);
-app.use("/api/auth", authRoutes)
 
-// Test Route
+// Serve frontend files
+app.use(express.static(__dirname));
+
+// Routes
+app.use("/api/users", userRoutes);
+app.use("/api/auth", authRoutes);
+
+// Home Route
 app.get("/", (req, res) => {
-  res.send("API Running");
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 
 // Server
